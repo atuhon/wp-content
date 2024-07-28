@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
+
     <?php wp_head()?>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
-        <?php
-        $id=get_post_thumbnail_id();//アップされた画像のid
-        $img=wp_get_attachment_image_src($id); //アップロードされた画像を１件取って来る
-        ?>
+
 
         <link rel="icon" type="image/x-icon" href="<?php echo $img[0]; ?>/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->

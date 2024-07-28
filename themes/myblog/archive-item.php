@@ -18,7 +18,7 @@
     </head>
     <body>
         <!-- Navigation-->
-        <?php get_template_part('nav.php');?>
+        <?php get_template_part('nav');?>
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/home-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">

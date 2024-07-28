@@ -1,14 +1,22 @@
 <!DOCTYPE html>
+
 <head>
     <?php 
-    get_header()
+    get_header();
+
     ?>
+
     </head>
     <body>
-        <!-- Navigation-->
-         <?php get_template_part('nav.php');?>
-         <!-- 共通パーツに分ける事ができる -->
 
+
+        <!-- Navigation-->
+         <?php get_template_part('inclues/nav');?>
+         <!-- 共通パーツに分ける事ができる.phpは必要ない -->
+        <?php
+        $id=get_post_thumbnail_id();//アップされた画像のid
+        $img=wp_get_attachment_image_src($id); //アップロードされた画像を１件取って来る
+        ?>
         <!-- Page Header-->
         <?php while(have_posts()):the_post(); ?>
         <header class="masthead" style="background-image: url('<?php echo $img[0]; ?>')">
@@ -39,6 +47,7 @@
             </div>
         </article>
         <hr>
+        <div><?php previous_post_link($link)?></div>
         <?php endwhile?>
         <!-- Footer-->
         <footer class="border-top">
@@ -63,7 +72,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!">
+                                <a href="<?php next_post_link($link)?>">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -80,7 +89,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
-    <?php wp_footer()?>
+    <!-- <?php wp_footer()?> -->
     </body>
 
 </html>
