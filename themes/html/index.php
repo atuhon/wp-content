@@ -67,70 +67,44 @@ logginなどのクラスを使ってログイン時の処理を書いたりで�
                 <h2 class="title">最新情報<span>NEWS</span></h2>
             </header>
 
+
             <div class="row">
+            <?php while(have_posts()):the_post()?>
                 <div class="col-md-4">
-                    <article class="news">
-                        <div class="news_pic">
-                            <a href="#">
-                                <img src="./assets/img/home/news_img-1.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="news_meta">
-                            <ul class="post-categories">
-                                <li><a href="#">お知らせ</a></li>
-                            </ul>
-                            <time class="news_time" datetime="2019-00-00">2019年00月00日</time>
-                        </div>
-                        <h2 class="news_title"><a href="#">タイトルタイトルタイトルタイトル</a></h2>
-                        <div class="news_desc">
-                            <p>概要が入ります。概要が入ります。概要が入ります。概要が入ります。概要が入ります。概要が入ります。</p>
-                            <p><a href="#">[続きを読む]</a></p>
-                        </div>
-                    </article>
-                </div>
+  
+                    <article class="<?php the_ID() ?> <?php post_class() ?>">
+                        <!-- articleにIDとpostのクラスを表示させる、CSSで作業する際に便利 -->
 
-                <div class="col-md-4">
-                    <article class="news">
                         <div class="news_pic">
-                            <a href="#">
-                                <img src="./assets/img/home/news_img-2.jpg" alt="">
+                            <a href="<?php the_permalink() ?>">
+                            <?php if(has_post_thumbnail()): ?>
+                                <?php the_post_thumbnail("thumbnail"); ?>
+                                <?php else: ?> 
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png">
+                                <?php endif; ?>
                             </a>
                         </div>
                         <div class="news_meta">
-                            <ul class="post-categories">
-                                <li><a href="#">お知らせ</a></li>
-                            </ul>
-                            <time class="news_time" datetime="2019-00-00">2019年00月00日</time>
-                        </div>
-                        <h2 class="news_title"><a href="#">タイトルタイトルタイトルタイトル</a></h2>
-                        <div class="news_desc">
-                            <p>概要が入ります。概要が入ります。概要が入ります。概要が入ります。概要が入ります。概要が入ります。</p>
-                            <p><a href="#">[続きを読む]</a></p>
-                        </div>
-                    </article>
-                </div>
 
-                <div class="col-md-4">
-                    <article class="news">
-                        <div class="news_pic">
-                            <a href="#">
-                                <img src="./assets/img/home/news_img-3.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="news_meta">
-                            <ul class="post-categories">
-                                <li><a href="#">お知らせ</a></li>
+
+                                <?php the_category()?>
                             </ul>
-                            <time class="news_time" datetime="2019-00-00">2019年00月00日</time>
+                           <?php the_time("Y/m/d") ?>
                         </div>
-                        <h2 class="news_title"><a href="#">タイトルタイトルタイトルタイトル</a></h2>
+                        <h2 class="news_title"><a href="#"><?php the_title();?></a></h2>
                         <div class="news_desc">
-                            <p>概要が入ります。概要が入ります。概要が入ります。概要が入ります。概要が入ります。概要が入ります。</p>
-                            <p><a href="#">[続きを読む]</a></p>
+                            <p><?php echo the_excerpt();?> </p>
+                            <!-- 「続きを見る」までのスペースに記事の概要を乗せる -->
+                            <p><a href="<?php the_permalink();?>">続きを見る</a></p>
+
                         </div>
                     </article>
+
                 </div>
-            </div>
+                <?php endwhile;?>
+
+               
+
 
             <p class="sec_btn">
                 <a href="" class="btn btn-default">最新情報の一覧<i class="fas fa-angle-right"></i></a>
