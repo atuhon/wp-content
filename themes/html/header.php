@@ -7,6 +7,7 @@
     第二引数にパスを追加する事で独自のJSファイルの使用も可能
     */
  ?>
+
  <?php wp_enqueue_style('font-awesome','https://use.fontawesome.com/releases/v5.6.1/css/all.css')?>
  <?php wp_enqueue_script('bistro',get_template_directory_uri() . '/assets/js/main.js')?>;
  <?php wp_head() //→プラグインが使えなくなる可能性がある?>

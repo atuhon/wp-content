@@ -1,5 +1,7 @@
+<div class="pagetop js-pagetop"><i class="fas fa-angle-up"></i>PAGE TOP</div>
+
 <footer class="footer">
-<?php wp_footer() //→プラグインが使えなくなる可能性がある?>
+<?php wp_footer() //→プラグインが使えなくなる可能性があるため入れておく?>
         <div class="container">
             <div class="footer_inner">
                 <nav>
