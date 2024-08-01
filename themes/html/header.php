@@ -18,4 +18,38 @@
     <link href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.min.css" rel="stylesheet">
 
 </head>
-</html>
+<header class="header">
+        <div class="header_inner">
+            <div class="header_logo">
+                <h1><a href="<?php home_url()?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo@2x.png" alt="BISTRO CALME"></a></h1>
+            </div>
+
+            <div class="header_desc"><p><?php bloginfo('description'); ?></p></div>
+
+            <form class="header_search">
+                <input type="text" placeholder="キーワードを入力">
+                <i class="fas fa-search"></i>
+            </form>
+        </div>
+
+        <div class="header_links">
+        <nav class="gnav">
+<?php
+$args=array(
+    'menus'=>'head_navi',//管理画面で作成したメニュー名
+    'menu_class'=>'',//メニュー構成のulタグ
+    'container'=>false//divタグの削除
+);
+wp_nav_menu($args);
+?>
+			</nav>
+
+
+
+            <ul class="header_sns">
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            </ul>
+       
+            </html>
+

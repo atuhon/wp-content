@@ -12,36 +12,7 @@ logginなどのクラスを使ってログイン時の処理を書いたりで�
 <?php  wp_body_open() 
 
 //functions.phpでbody内に記述する際に使用する?>
-    <header class="header">
-        <div class="header_inner">
-            <div class="header_logo">
-                <h1><a href="<?php home_url()?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo@2x.png" alt="BISTRO CALME"></a></h1>
-            </div>
-
-            <div class="header_desc"><p><?php bloginfo('description'); ?></p></div>
-
-            <form class="header_search">
-                <input type="text" placeholder="キーワードを入力">
-                <i class="fas fa-search"></i>
-            </form>
-        </div>
-
-        <div class="header_links">
-            <nav class="gnav">
-                <ul class="">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">わたしたちについて</a></li>
-                    <li><a href="#">アクセス</a></li>
-                    <li><a href="#">最新情報</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
-                </ul>
-            </nav>
-
-            <ul class="header_sns">
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            </ul>
-        </div>
+ </div>
 
         <svg class="header_menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
             <defs><clipPath id="clip-path"><rect width="30" height="30" fill="none"/></clipPath></defs>
@@ -163,11 +134,9 @@ logginなどのクラスを使ってログイン時の処理を書いたりで�
         </div>
     </section>
 
-    <div class="pagetop js-pagetop"><i class="fas fa-angle-up"></i>PAGE TOP</div>
-
-    <footer class="footer">
+   
       <?php get_footer()?>
-    </footer>
+
 
 <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
