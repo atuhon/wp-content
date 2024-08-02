@@ -18,7 +18,7 @@
     <?php if(have_posts()):?>
         <?php while(have_posts()):the_post();?>
 
-    <h2 class="pageTitle"><?php the_title(); ?><span><?php echo strtoupper($post->post_name); ?></span></h2>
+    <h2 class="pageTitle"><?php the_title(); ?><span><?php  strtoupper($post->post_name); ?></span></h2>
 
     <main class="main">
         <div class="container">

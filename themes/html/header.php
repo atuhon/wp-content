@@ -25,9 +25,10 @@
             </div>
 
             <div class="header_desc"><p><?php bloginfo('description'); ?></p></div>
+            <?php get_search_form() ?>
 
-            <form class="header_search">
-                <input type="text" placeholder="キーワードを入力">
+            <form action="<?php echo home_url("/") ?>" method="get" class="header_search" name="s">
+                <input  name="s" value="<?php the_search_query()?>" type="text" placeholder="キーワードを入力">
                 <i class="fas fa-search"></i>
             </form>
         </div>
