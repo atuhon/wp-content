@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php bloginfo('name'); ?></title>
+    <link href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
     <?php wp_enqueue_script('JQuery');
+
     /*読み込むJS設定ファイルの衝突を避けるために使用、
     「JQuery」指定でJQuery設定ファイルの読み込みを１度にする。
     第二引数にパスを追加する事で独自のJSファイルの使用も可能
     */
- ?>
+    ?>
 
- <?php wp_enqueue_style('font-awesome','https://use.fontawesome.com/releases/v5.6.1/css/all.css')?>
- <?php wp_enqueue_script('bistro',get_template_directory_uri() . '/assets/js/main.js')?>;
- <?php wp_head() //→プラグインが使えなくなる可能性がある?>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.min.css" rel="stylesheet">
 
 </head>
-<header class="header">
+
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
+    <header class="header">
         <div class="header_inner">
             <div class="header_logo">
-                <h1><a href="<?php home_url()?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo@2x.png" alt="BISTRO CALME"></a></h1>
+                <h1><a href="<?php home_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo@2x.png" alt="BISTRO CALME"></a></h1>
             </div>
 
-            <div class="header_desc"><p><?php bloginfo('description'); ?></p></div>
-            <?php get_search_form() ?>
+            <div class="header_desc">
+                <p><?php bloginfo('description'); ?></p>
+            </div>
 
-            <form action="<?php echo home_url("/") ?>" method="get" class="header_search" name="s">
-                <input  name="s" value="<?php the_search_query()?>" type="text" placeholder="キーワードを入力">
-                <i class="fas fa-search"></i>
-            </form>
+            <?php get_search_form()//searchform.phpを読み込む ?>
+            
+
+
         </div>
 
         <div class="header_links">
-        <nav class="gnav">
-<?php
-$args=array(
-    'menus'=>'head_navi',//管理画面で作成したメニュー名
-    'menu_class'=>'',//メニュー構成のulタグ
-    'container'=>false//divタグの削除
-);
-wp_nav_menu($args);
-?>
-			</nav>
+            <nav class="gnav">
+                <?php
+                $args = array(
+                    'menus' => 'head_navi',//管理画面で作成したメニュー名
+                    'menu_class' => '',//メニュー構成のulタグ
+                    'container' => false//divタグの削除
+                );
+                wp_nav_menu($args);
+                ?>
+            </nav>
 
 
 
@@ -51,6 +57,18 @@ wp_nav_menu($args);
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
             </ul>
-       
-            </html>
-
+        </div>
+        <svg class="header_menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="30" height="30" viewBox="0 0 30 30">
+            <defs>
+                <clipPath id="clip-path">
+                    <rect width="30" height="30" fill="none" />
+                </clipPath>
+            </defs>
+            <g clip-path="url(#clip-path)">
+                <rect class="header_border header_border-1" width="30" height="2" transform="translate(0 0)" />
+                <rect class="header_border header_border-2" width="30" height="2" transform="translate(0 10)" />
+                <rect class="header_border header_border-3" width="30" height="2" transform="translate(0 20)" />
+            </g>
+        </svg>
+    </header>
