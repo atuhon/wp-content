@@ -13,8 +13,16 @@
 </head>
 <body>
     <header class="header">
+        <?php
+        if(is_page("contact")){
+            remove_filter("the_content","wpautop");
+        } //is_page→ページを判断
+        //wpautop→自動整形機能
+        //remove_filter()→フィルターフックに付加されている関数を除去する。
+        ?>
      <?php get_header(); ?>
     </header>
+    <?php get_template_part('template-parts/breadcrumb') ?>
     <?php if(have_posts()):?>
         <?php while(have_posts()):the_post();?>
 

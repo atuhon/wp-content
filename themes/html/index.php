@@ -5,6 +5,7 @@
     <?php get_header() ?>
 
   </head>
+  <?php get_template_part('template-parts/breadcrumb') ?>
 <body <?php body_class(); 
 /*body要素に付与されたclassを出力する、
 アクセスしているユーザによって表示が異なるため
@@ -45,6 +46,7 @@ logginなどのクラスを使ってログイン時の処理を書いたりで�
                         </div>
                     <?php endwhile; ?>
                 <?php endif ?>
+                <?php if(function_exists("wp_pagenavi")){wp_pagenavi();}//ページネーションの設定 ?>
        
 
 

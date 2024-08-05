@@ -18,6 +18,7 @@
     </header>
 
     <h2 class="pageTitle">最新情報<span>NEWS</span></h2>
+    <?php get_template_part('template-parts/breadcrumb') ?>
 
     <main class="main">
         <div class="container">

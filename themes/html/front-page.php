@@ -17,6 +17,7 @@
     <div class="container">
         <header class="sec_header">
             <h2 class="title">最新情報<span>NEWS</span></h2>
+            <?php get_template_part('template-parts/breadcrumb') ?>
         </header>
 
 
@@ -29,10 +30,12 @@
                         </div>
                     <?php endwhile; ?>
                 <?php endif ?>
-  
+               
 
 
         </div>
+        <?php if(function_exists("wp_pagenavi")){wp_pagenavi();} //ページネーションの設定?>
+       
 
         <p class="sec_btn">
             <a href="" class="btn btn-default">最新情報の一覧<i class="fas fa-angle-right"></i></a>
