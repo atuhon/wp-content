@@ -43,7 +43,7 @@
             <nav class="gnav">
                 <?php
                 $args = array(
-                    'menus' => 'head_navi',//管理画面で作成したメニュー名
+                    'menu' => 'head_navi',//管理画面で作成したメニュー名
                     'menu_class' => '',//メニュー構成のulタグ
                     'container' => false//divタグの削除
                 );

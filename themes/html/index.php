@@ -35,41 +35,20 @@ logginなどのクラスを使ってログイン時の処理を書いたりで�
 
     <section class="sec">
         <div class="container">
-            <div class="row">
-            <?php while(have_posts()):the_post()?>
-                <div class="col-md-4">
-  
-                    <article class="<?php the_ID() ?> <?php post_class() ?>">
-                        <!-- articleにIDとpostのクラスを表示させる、CSSで作業する際に便利 -->
+        <div class="row">
 
-                        <div class="news_pic">
-                            <a href="<?php the_permalink() ?>">
-                            <?php if(has_post_thumbnail()): ?>
-                                <?php the_post_thumbnail("thumbnail"); ?>
-                                <?php else: ?> 
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png">
-                                <?php endif; ?>
-                            </a>
+                <?php if (have_posts()): ?>
+                    <?php while (have_posts()):
+                        the_post(); ?>
+                        <div class="col-md-4">
+                            <?php get_template_part('template-parts/loop', 'news') ?>
                         </div>
-                        <div class="news_meta">
+                    <?php endwhile; ?>
+                <?php endif ?>
+       
 
 
-                                <?php the_category()?>
-                            </ul>
-                           <?php the_time("Y/m/d") ?>
-                        </div>
-                        <h2 class="news_title"><a href="#"><?php the_title();?></a></h2>
-                        <div class="news_desc">
-                            <p><?php echo the_excerpt();?> </p>
-                            <!-- 「続きを見る」までのスペースに記事の概要を乗せる -->
-                            <p><a href="<?php the_permalink();?>">続きを見る</a></p>
-
-                        </div>
-                    </article>
-
-                </div>
-                <?php endwhile;?>
-
+        </div>
 
 
                                     <?php
