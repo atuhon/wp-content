@@ -43,11 +43,14 @@
 
                                 <div class="article_body">
                                     <div class="content">
-                                        <p><?php the_title() ?></p>
-                                        <p>
-                                            <?php the_content() ?>
-                                        </p>
+                                        <?php the_title() ?>
+                                        
+                                            <?php the_content(); ?>
                                     </div>
+                                    <?php comments_template(); 
+                                    //comments.phpを読み込む事ができる
+                                    
+                                    ?>
                                 </div>
 
                                 <div class="postLinks">
@@ -64,6 +67,9 @@
                 </div>
 
                 <div class="col-12 col-md-3">
+                <aside class="archive">
+                    <?php get_sidebar('latests') ?>
+                    </aside>
                     <aside class="archive">
                     <?php get_sidebar('category') ?>
                     </aside>
