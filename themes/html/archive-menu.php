@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
-
+<!-- archive-{post_type}.phpの命名規則 -->
 <?php get_header()?>
 
 <body>
 
 
 	<h2 class="pageTitle">メニュー<span>MENU</span></h2>
+	<?php get_template_part( "template-parts/breadcrumb")
+	
+	?>
 
 	<main class="main">
 		<section class="sec">
