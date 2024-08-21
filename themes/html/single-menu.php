@@ -17,7 +17,7 @@
 							</div>
 						</div>
 
-						<dphplass="col-12 col-md-6">
+						<div class="col-12 col-md-6">
 							<div class="article_pic">
 								<?php 
 								$pic=get_field('pic');//AdvanceCustomFieldsプラグイン関数
